@@ -1,0 +1,20 @@
+--- openmpi-1.4.1.orig/autogen.sh	2010-01-06 15:08:04.000000000 -0500
++++ openmpi-1.4.1/autogen.sh	2010-03-31 17:47:05.000000000 -0400
+@@ -401,7 +401,7 @@
+ 
+     if test -f $topdir_file ; then
+ 	rm -rf libltdl opal/libltdl opal/ltdl.h
+-	run_and_check $ompi_libtoolize --automake --copy --ltdl
++	run_and_check $ompi_libtoolize --automake --copy --ltdl --force
+         if test -d libltdl; then
+              echo "   -- Moving libltdl to opal/"
+              mv libltdl opal
+@@ -499,7 +499,7 @@
+             echo "     -- your libltdl doesn't need this! yay!"
+         fi
+     else
+-	run_and_check $ompi_libtoolize --automake --copy
++	run_and_check $ompi_libtoolize --automake --copy --force
+     fi
+ 
+     if test -f $topdir_file; then 
