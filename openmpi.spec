@@ -42,6 +42,7 @@ BuildRequires:		gcc-gfortran, libtool, numactl-devel, valgrind-devel
 BuildRequires:		libibverbs-devel >= 1.1.3, opensm-devel > 3.3.0
 BuildRequires:		librdmacm librdmacm-devel libibcm libibcm-devel
 BuildRequires:		python libtool-ltdl-devel plpa-devel
+BuildRequires:		flex
 #%ifnarch ppc
 #BuildRequires:		compat-dapl-devel
 #%endif
@@ -351,6 +352,9 @@ rm -rf %{buildroot}
 %{_sysconfdir}/rpm/macros.%{namepsmarch}
 
 %changelog
+* Mon Sep 5 2011 Mike Adams <shalkie@gooseproject.org> - 1.4.1-4.3
+- Added flex package as a build requires entry to the RPM Spec file.
+
 * Mon Aug 2 2010 Jay Fenlason <fenlason@redhat.com> - 1.4.1-4.3
 - Split the psm support packages into their own rpms to close
   Resolves: rhbz616575 openmpi does not work with non-infinipath hardware
